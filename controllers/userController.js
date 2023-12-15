@@ -44,6 +44,7 @@ export const createUser = async(req,res) =>{
 export const login = (req, res) =>{
     const { email, password } = req.body;
 
+    console.log(email,password);
     const query = 'SELECT password FROM user WHERE  email= ?';
     connection.query(query,[email],(err, result) =>{
         if(err){
