@@ -56,11 +56,6 @@ export const login = (req, res) =>{
                 error:"user not found to the database"
             })
         }
-        // }else{
-        //     return res.status(200).json({
-        //         message:"Connected successfully "
-        //     })
-        // }
 
         const user = result[0];
 

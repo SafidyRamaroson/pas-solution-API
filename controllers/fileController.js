@@ -12,11 +12,14 @@ export const getDriveFilesAndStoreToDB = async(req,res,next) => {
         key: process.env.KEY,
         scopes: ['https://www.googleapis.com/auth/drive'],
       });
-    
+      
+      console.log(auth)
       const drive = google.drive({
           version:"v3",
           auth:auth
         });
+
+      console.log(drive)
 
       const sharedFolderId ="1Uth8yUMAGgVu4Bu4EylDe6_ULRjTMGN_";
 
