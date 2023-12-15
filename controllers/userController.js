@@ -28,6 +28,7 @@ export const createUser = async(req,res) =>{
 
         connection.query(query, [name, email,hashedPassword],  (err, result) =>{
             if(err){
+                console.log(err)
                 res.status(500).send("Error during the registration");
             }else{
                 res.send("successfully registered");

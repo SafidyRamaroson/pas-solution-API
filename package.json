@@ -10,7 +10,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "proxy": "http://localhost:5000",
+  "proxy": "https://node-express-mysql-api.onrender.com",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
