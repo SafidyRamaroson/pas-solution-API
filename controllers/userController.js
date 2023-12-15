@@ -72,7 +72,10 @@ export const login = (req, res) =>{
                     })
             //  res.send("user is able to enter the website")
         }else{
-            return res.send("password'user don't correspond into database");
+            return  res.status(400).json({
+                error:"user not found to the database"
+            })
+            // res.send("password'user don't correspond into database");
         }
     })
 }
