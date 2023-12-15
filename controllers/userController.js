@@ -67,7 +67,10 @@ export const login = (req, res) =>{
         const passwordMatch = bcrypt.compareSync(password,user.password);
 
         if(passwordMatch) {
-            return res.send("user is able to enter the website")
+            return res.status(200).json({
+                        message:"Connected successfully "
+                    })
+            //  res.send("user is able to enter the website")
         }else{
             return res.send("password'user don't correspond into database");
         }
