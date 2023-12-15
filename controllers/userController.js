@@ -44,7 +44,6 @@ export const createUser = async(req,res) =>{
 export const login = (req, res) =>{
     const { email, password } = req.body;
 
-    console.log(email,password);
     const query = 'SELECT password FROM user WHERE  email= ?';
     connection.query(query,[email],(err, result) =>{
         if(err){
@@ -53,22 +52,20 @@ export const login = (req, res) =>{
         }
 
         if(result.length === 0){
-            res.status(400).json({
+           return res.status(400).json({
                 error:"user not found to the database"
             })
-        }else{
-            res.status(200).json({
-                message:"Connected successfully "
-            })
         }
+        // }else{
+        //     return res.status(200).json({
+        //         message:"Connected successfully "
+        //     })
+        // }
 
         const user = result[0];
 
-        console.log(user);
-
         const passwordMatch = bcrypt.compareSync(password,user.password);
 
-        console.log(passwordMatch);
         if(passwordMatch) {
             return res.send("user is able to enter the website")
         }else{
